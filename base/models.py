@@ -6,5 +6,5 @@ class Member(models.Model):
     user = models.ForeignKey(
     User, on_delete=models.CASCADE, null=True, blank=True)
     first_name = models.CharField(null=True, blank=True, max_length=200)
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
+    number = PhoneNumberField(null=False, blank=False, unique=True)
     created = models.DateTimeField(auto_now_add=True)
