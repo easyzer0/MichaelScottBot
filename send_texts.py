@@ -28,12 +28,6 @@ def sendMessage():
 
     quoteSelection = random.choice(quotes)
 
-
-    # dailyQuote = "Here's your daily Michael Scott quote! - EasyBot\n\n" + \
-    #     random.choice(quotes)
-    dailyQuote = "Here's your daily Michael Scott quote! - EasyBot\n\n" + \
-        quoteSelection
-
     print("Quote found. Sending to recipients...")
 
     memberDict = {}

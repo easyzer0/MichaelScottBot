@@ -5,16 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap" rel="stylesheet">
+    <style>
+      .h1 {
+        font-family: 'Oswald', sans-serif;
+      }
+      .h3 {
+        font-family: 'Oswald', sans-serif;
+      }
+      .form {
+        font-family: 'Oswald', sans-serif;
+      }
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+    </style>
   </head>
   <body>
-    <h1>Michael Scott Quotes</h1>
-    <h3>Enter your first name and phone number to receive daily Michael Scott quotes by text message!</h3>
+    <div style="text-align: center" class="center">
+    <h1 class='h1'>Michael Scott Quotes</h1>
+    <h3 class='h3'>Enter your first name and phone number to receive daily Michael Scott quotes by text message!</h3>
     <br>
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit">
-    </form>
+      <form class="form" action="" method="POST">
+          {% csrf_token %}
+          {{ form }}
+          <input type="submit">
+      </form>
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
@@ -22,7 +46,9 @@
         {% endfor %}
     </ul>
     {% endif %}
+    <img style="margin-top:40px" src="https://c.tenor.com/2W8RhTHA-2cAAAAd/the-office-michael-scott.gif" alt="Michael Scott GIF">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+  </div>
   </body>
 </html>
