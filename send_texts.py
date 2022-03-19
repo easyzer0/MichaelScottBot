@@ -26,8 +26,13 @@ def sendMessage():
 
     driver.quit()
 
+    quoteSelection = random.choice(quotes)
+
+
+    # dailyQuote = "Here's your daily Michael Scott quote! - EasyBot\n\n" + \
+    #     random.choice(quotes)
     dailyQuote = "Here's your daily Michael Scott quote! - EasyBot\n\n" + \
-        random.choice(quotes)
+        quoteSelection
 
     print("Quote found. Sending to recipients...")
 
@@ -39,6 +44,8 @@ def sendMessage():
         memberDict[textMessage[i]['first_name']] = textMessage[i]['number']
 
     for i in memberDict:
+        dailyQuote = "Hey, " + i.title() + "! Here's your daily Michael Scott quote! - EasyBot\n\n" + \
+        quoteSelection
         client.messages.create(body=dailyQuote,
                                from_="19106065149",
                                to=memberDict[i])
